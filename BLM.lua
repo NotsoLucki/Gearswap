@@ -1,3 +1,5 @@
+--Current BLM level: 50
+
 -------------------------------------------------------
 --These functions set gearsets for specific instances--
 -------------------------------------------------------
