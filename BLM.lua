@@ -1,5 +1,7 @@
+-------------------------------------------------------
+--These functions set gearsets for specific instances--
+-------------------------------------------------------
 function get_sets()
---This function prepares your equipment sets.
 	sets.precast = {}
 	sets.precast.sid = {main="Eremite's Wand +1", sub="Flat Shield", ammo="Morion Tathlum", head="Seer's Crown +1", neck="Willpower Torque", ear2="Morion Earring", body="Tactician Magician's Coat", hands='Sly Gauntlets', ring1="Wisdom Ring +1", ring2="Wisdom Ring +1", back="Red Cape +1", waist="Druid's Rope", legs="Magic Slacks", feet="Mountain Gaiters"}
 	
@@ -13,19 +15,22 @@ function get_sets()
 	sets.aftercast.rest = {main="Spiro Staff", sub="Lizard Strap+1", body="Salutary Robe +1", neck='Beak Necklace +1', ear1='Antivenom Earring', waist="Qiqirn Sash +1", legs="Baron's Slops"}
 end
 
---
-
+-------------------------------------------------------------------------------------------------------------------------------
+--These functions are used to set specific gearsets before actions are sent to the server                                    --
+--eg. 'sets.precast.sid' is a gearset that equips gear that maximizes spell interruption down while in the process of casting--
+-------------------------------------------------------------------------------------------------------------------------------
 function precast(spell)
---This function performs right before the action is sent to the server.
 	if spell.type:contains('Magic') then
 		equip(sets.precast.sid)
 	end
 end
 
---
-
+-------------------------------------------------------------------------------------------------------------------------------------
+--These functions are used after precast, but before the action is sent to the server                                              --
+--This will always happen before the action takes effect, even if it has a cast-time of 0. So this can be used on JA and WS as well--
+--eg. 'sets.midcast.ele' is a geaerset that equips gear that maximizes Elemental Skill for elemental spells                        --
+-------------------------------------------------------------------------------------------------------------------------------------
 function midcast(spell)
---This function performs after precast but before the action is sent to the server. This will always happen before the action takes effect, even if it has a cast-time of 0. So this can be used on JA and WS as well.
 	if spell.skill:contains('Elemental') then
 		equip(sets.midcast.ele)
 	end
@@ -37,16 +42,17 @@ function midcast(spell)
 	end
 end
 
---
-
+---------------------------------------------------------------------------------
+--This function performs after the action finishes or is interrupted in any way--
+---------------------------------------------------------------------------------
 function aftercast(spell)
---This function performs after the action finishes or is interrupted in any way.
 end
 
---
-
+----------------------------------------------------------------------------------------------------
+--This function is called every time a player's status changes (Engaged, Idle, Resting, Dead)     --
+--eg. 'sets.aftercast.idle' is a gearset that is equiped when the player is not resting or engaged--
+----------------------------------------------------------------------------------------------------
 function status_change(new,old)
---This function is called every time a player's status changes (Engaged, Idle, Resting, Dead).
 	if new == 'Idle' then
 		equip(sets.aftercast.idle)
 	elseif new == 'Resting' then
