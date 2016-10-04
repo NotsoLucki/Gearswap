@@ -48,10 +48,10 @@ end
 function aftercast(spell)
 end
 
-----------------------------------------------------------------------------------------------------
---This function is called every time a player's status changes (Engaged, Idle, Resting, Dead)     --
---eg. 'sets.aftercast.idle' is a gearset that is equiped when the player is not resting or engaged--
-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+--This function is called every time a player's status changes (Engaged, Idle, Resting, Dead)--
+--eg. 'sets.aftercast.rest' is a gearset that maximizes MP recovery when resting             --
+-----------------------------------------------------------------------------------------------
 function status_change(new,old)
 	if new == 'Idle' then
 		equip(sets.aftercast.idle)
