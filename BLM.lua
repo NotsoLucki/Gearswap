@@ -1,8 +1,8 @@
 --Current BLM level: 62
 
--------------------------------------------------------
---These functions set gearsets for specific instances--
--------------------------------------------------------
+-----------------------------------------------------
+--These functions set gearsets for specific instances
+-----------------------------------------------------
 function get_sets()
 	--Precast occurs before actions are sent to the server
 	sets.precast = {}
@@ -47,21 +47,21 @@ function get_sets()
 		body="Royal Cloak", neck='Beak Necklace +1', ear1='Antivenom Earring', 
 		waist="Qiqirn Sash +1", legs="Baron's Slops"}
 
--------------------------------------------------------------------------------------------------------------------------------
---These functions are used to set specific gearsets before actions are sent to the server                                    --
---eg. 'sets.precast.sid' is a gearset that equips gear that maximizes spell interruption down while in the process of casting--
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+--These functions are used to set specific gearsets before actions are sent to the server                                    
+--eg. 'sets.precast.sid' is a gearset that equips gear that maximizes spell interruption down while in the process of casting
+-----------------------------------------------------------------------------------------------------------------------------
 function precast(spell)
 	if spell.type:contains('Magic') then
 		equip(sets.precast.sid)
 	end
 end
 
--------------------------------------------------------------------------------------------------------------------------------------
---These functions are used after precast, but before the action is sent to the server                                              --
---This will always happen before the action takes effect, even if it has a cast-time of 0. So this can be used on JA and WS as well--
---eg. 'sets.midcast.ele' is a geaerset that equips gear that maximizes Elemental Skill for elemental spells                        --
--------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+--These functions are used after precast, but before the action is sent to the server                                              
+--This will always happen before the action takes effect, even if it has a cast-time of 0. So this can be used on JA and WS as well
+--eg. 'sets.midcast.ele' is a geaerset that equips gear that maximizes Elemental Skill for elemental spells                        
+-----------------------------------------------------------------------------------------------------------------------------------
 function midcast(spell)
 	if spell.skill:contains('Elemental') then
 		equip(sets.midcast.ele)
@@ -80,9 +80,9 @@ function midcast(spell)
 	end
 end
 
----------------------------------------------------------------------------------
---This function performs after the action finishes or is interrupted in any way--
----------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+--This function performs after the action finishes or is interrupted in any way
+-------------------------------------------------------------------------------
 function aftercast(spell)
 	if player.status == "Engaged" then
 		equip()
@@ -91,10 +91,10 @@ function aftercast(spell)
 	end
 end
 
------------------------------------------------------------------------------------------------
---This function is called every time a player's status changes (Engaged, Idle, Resting, Dead)--
---eg. 'sets.aftercast.rest' is a gearset that maximizes MP recovery when resting             --
------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+--This function is called every time a player's status changes (Engaged, Idle, Resting, Dead)
+--eg. 'sets.aftercast.rest' is a gearset that maximizes MP recovery when resting             
+---------------------------------------------------------------------------------------------
 function status_change(new,old)
 	if new == 'Idle' then
 		equip(sets.aftercast.idle)
