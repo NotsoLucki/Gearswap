@@ -45,7 +45,7 @@ function get_sets()
 		main="Terra's Staff", sub = "Reaver Grip +1",
 		neck="Evasion Torque", ear1="Platinum Earring +1", ear2="Platinum Earring +1",
 		body="Demon's Cloak", hands="Tactician Magician's Cuffs +2", ring1="Celerity Ring +1", ring2="Celerity Ring +1",
-		back="Umbra Cape", waist="Volant Belt", legs="Martial Slacks", feet="Wizard's Sabots"}
+		back="Umbra Cape", waist="Volant Belt", legs="Martial Slacks", feet="Herald's Gaiters"}
 	sets.aftercast.rest = {
 		main="Chatoyant Staff", sub="Bugard Strap+1", 
 		body="Demon's Cloak", neck='Beak Necklace +1', ear1='Antivenom Earring', 
