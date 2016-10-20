@@ -1,4 +1,4 @@
---Current BLM level: 62
+--Current BLM level: 70
 
 -----------------------------------------------------
 --These functions set gearsets for specific instances
@@ -8,44 +8,48 @@ function get_sets()
 	sets.precast = {}
 	sets.precast.sid = {
 		main="Eremite's Wand +1", sub="Tortoise Shield", ammo="Morion Tathlum", 
-		neck="Willpower Torque", 
-		body="Royal Cloak", hands='Sly Gauntlets', 
+		neck="Willpower Torque", ear2="Phantom Earring +1", 
+		body="Demon's Cloak", hands='Sly Gauntlets', ring1="Genius Ring +1", ring2="Genius Ring +1", 
 		back="Red Cape +1", waist="Druid's Rope", legs="Magic Slacks", feet="Wizard's Sabots"}
 	
 	--Midcast occurs RIGHT/JUST/etc. before actions are sent to the server
 	sets.midcast = {}
 	sets.midcast.ele = {
 		main="Chatoyant Staff", sub="Bugard Strap +1", 
-		head="Wizard's Petasos", neck="Solon Torque", ear1="Elemental Earring", ear2="Phantom Earring +1", 
-		body="Flora Cotehardie", hands="Wizard's Gloves", ring1="Genius Ring +1", ring2="Genius Ring +1", 
-		waist="Penitent's Rope"}
+		neck="Solon Torque", ear1="Elemental Earring", 
+		body="Demon's Cloak", hands="Wizard's Gloves",
+		waist="Penitent's Rope", feet="Mountain Gaiters"}
 	sets.midcast.eleIce = {
 		main="Aquilo's Staff",
 		hands="Wizard's Gloves",}
 	sets.midcast.enf = {
 		main="Chatoyant Staff", sub="Bugard Strap +1", 
-		head="Wizard's Petasos", neck="Solon Torque", ear1="Enfeebling Earring", ear2="Phantom Earring +1", 
-		body="Flora Cotehardie", hands='Sly Gauntlets', ring1="Genius Ring +1", ring2="Genius Ring +1", 
-		waist="Penitent's Rope"}
+		head="Wizard's Petasos", neck="Enfeebling Torque", ear1="Enfeebling Earring", 
+		body="Wizard's Coat", hands='Sly Gauntlets', 
+		waist="Penitent's Rope", feet="Mountain Gaiters"}
 	sets.midcast.drk = {
 		main="Chatoyant Staff", sub="Bugard Strap +1", 
-		head="Wizard's Petasos", neck="Solon Torque", ear1="Dark Earring", ear2="Phantom Earring +1", 
-		body="Flora Cotehardie", hands='Sly Gauntlets', ring1="Genius Ring +1", ring2="Genius Ring +1", 
-		waist="Penitent's Rope"}
+		head="Wizard's Petasos", neck="Dark Torque", ear1="Dark Earring", 
+		body="Flora Cotehardie", hands='Sly Gauntlets', 
+		waist="Penitent's Rope", feet="Mountain Gaiters"}
 	sets.midcast.cure = {
 		main="Chatoyant Staff", sub="Bugard Strap +1"}
+	sets.midcast.SR = {
+		ring1="Sorcerer's Ring"}
+	sets.midcast.UP = {
+		neck="Uggalepih Pendant"}
 	
 	--Aftercast occurs after actions are sent to the server
 	sets.aftercast = {}
 	sets.aftercast.idle = {
 		main="Terra's Staff", sub = "Reaver Grip +1",
-		neck="Spirit Torque", ear1="Platinum Earring +1", ear2="Platinum Earring +1",
-		body="Royal Cloak", hands="Tactician Magician's Cuffs +2", ring1="Celerity Ring +1", ring2="Celerity Ring +1",
-		back="Dodge Cape", waist="Volant Belt", legs="Martial Slacks", feet="Wizard's Sabots"}
+		neck="Evasion Torque", ear1="Platinum Earring +1", ear2="Platinum Earring +1",
+		body="Demon's Cloak", hands="Tactician Magician's Cuffs +2", ring1="Celerity Ring +1", ring2="Celerity Ring +1",
+		back="Umbra Cape", waist="Volant Belt", legs="Martial Slacks", feet="Wizard's Sabots"}
 	sets.aftercast.rest = {
 		main="Chatoyant Staff", sub="Bugard Strap+1", 
-		body="Royal Cloak", neck='Beak Necklace +1', ear1='Antivenom Earring', 
-		waist="Qiqirn Sash +1", legs="Baron's Slops"}
+		body="Demon's Cloak", neck='Beak Necklace +1', ear1='Antivenom Earring', 
+		back="Invigorating Cape", waist="Qiqirn Sash +1", legs="Baron's Slops"}
 
 -----------------------------------------------------------------------------------------------------------------------------
 --These functions are used to set specific gearsets before actions are sent to the server                                    
@@ -77,6 +81,12 @@ function midcast(spell)
 	end
 	if spell.skill:contains('Dark') then
 		equip(sets.midcast.drk)
+	end
+	if player.hpp < 76 and player.tp < 100 then
+		equip(sets.midcast.SR)
+	end
+	if player.hpp < 51 then
+		equip(sets.midcast.UP)
 	end
 end
 
