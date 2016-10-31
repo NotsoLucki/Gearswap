@@ -53,7 +53,7 @@ function get_sets()
 	sets.aftercast.idle = {
 		main="Terra's Staff", sub = "Reaver Grip +1",
 		neck="Orochi nodowa +1", ear1="Harmonius Earring", ear2="Harmonius Earring",
-		body="Ixion Cloak", hands="Creek M mitts", ring1="Harmonius Ring", ring2="Harmonius Ring",
+		body="Ixion Cloak", hands="Creek M mitts", ring1="Bloodbead	Ring", ring2="Harmonius Ring",
 		back="Umbra Cape", waist="Steppe sash", legs="Genie Lappas", feet="Herald's Gaiters"}
 	sets.aftercast.rest = {
 		main="Chatoyant Staff", sub="Bugard Strap+1", 
@@ -125,4 +125,5 @@ function status_change(new,old)
 	elseif new == 'Resting' then
 		equip(sets.aftercast.rest)
 	end
+end
 end
