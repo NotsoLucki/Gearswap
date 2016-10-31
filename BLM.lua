@@ -96,7 +96,7 @@ function midcast(spell)
 	if player.hpp < 76 and player.tp < 100 then
 		equip(sets.midcast.SR)
 	end
-	if player.hpp < 51 then
+	if player.mpp < 51 then
 		equip(sets.midcast.UP)
 	end
 	if spell.skill:contains('Enhancing') then
