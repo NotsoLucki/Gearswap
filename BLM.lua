@@ -7,42 +7,78 @@ function get_sets()
 	--Precast occurs before actions are sent to the server
 	sets.precast = {}
 	sets.precast.sid = {
-		main="Eremite's Wand +1", sub="Tortoise Shield", ammo="Phantom Tathlum", 
-		neck="Willpower Torque", ear2="Phantom Earring +1", 
-		body="Ixion Cloak", hands='Mahatma cuffs', ring1="Omniscient Ring +1", ring2="Omniscient Ring +1", 
-		waist="Druid's Rope", legs="Mahatma slops", feet="Wizard's Sabots"}
+		main="Eremite's Wand +1", 
+		sub="Tortoise Shield", 
+		ammo="Phantom Tathlum", 
+		neck="Willpower Torque", 
+		ear2="Phantom Earring +1", 
+		body="Ixion Cloak", 
+		hands="Mahatma cuffs", 
+		ring1="Omniscient Ring +1", 
+		ring2="Omniscient Ring +1", 
+		waist="Druid's Rope", 
+		legs="Mahatma slops", 
+		feet="Wizard's Sabots"}
 	
 	--Midcast occurs RIGHT/JUST/etc. before actions are sent to the server
 	sets.midcast = {}
 	sets.midcast.ele = {
-		main="Chatoyant Staff", sub="Vivid Strap +1", 
-		head="Demon helm +1", neck="Lemegeton medallion +1", ear1="Moldavite Earring", 
-		body="Genie Weskit", hands="Genie manillas",
-		back="Hecate's Cape", waist="Witch sash", legs="Mahatma slops", feet="Mountain gaiters"}
+		main="Chatoyant Staff", 
+		sub="Vivid Strap +1", 
+		head="Demon helm +1", 
+		neck="Lemegeton medallion +1", 
+		ear1="Moldavite Earring", 
+		ear2="Crapaud Earring",
+		body="Genie Weskit", 
+		hands="Genie manillas",
+		back="Hecate's Cape", 
+		waist="Witch sash", 
+		legs="Mahatma slops", 
+		feet="Mountain gaiters"}
+	--
 	sets.midcast.eleIce = {
 		main="Aquilo's Staff",
-		hands="Wizard's Gloves",
 		back="Hecate's Cape"}
 	sets.midcast.enf = {
-		main="Chatoyant Staff", sub="Vivid Strap +1", 
-		head="Genie tiara", neck="Enfeebling Torque", ear1="Enfeebling Earring", 
-		body="Wizard's Coat", hands='Mahatma cuffs', 
-		back="Ixion Cape", waist="Witch Sash", legs="Genie lappas"}
+		main="Chatoyant Staff", 
+		sub="Vivid Strap +1", 
+		head="Genie tiara", 
+		neck="Enfeebling Torque", 
+		ear1="Enfeebling Earring", 
+		body="Wizard's Coat", 
+		hands='Mahatma cuffs', 
+		back="Ixion Cape", 
+		waist="Witch Sash", 
+		legs="Genie lappas"}
 	sets.midcast.drk = {
-		main="Chatoyant Staff", sub="Vivid Strap +1", 
-		head="Demon helm +1", neck="Dark Torque", ear1="Dark Earring", 
-		body="Mahatma houppelande", hands='Mahatma cuffs', 
-		back="Ixion Cape", waist="Witch sash", legs="Wizard's Tonban", feet="Genie Huaraches"}
+		main="Chatoyant Staff", 
+		sub="Vivid Strap +1", 
+		head="Demon helm +1", 
+		neck="Dark Torque", 
+		ear1="Dark Earring", 
+		body="Mahatma houppelande", 
+		hands="Sorcerer's Gloves", 
+		back="Ixion Cape", 
+		waist="Witch sash", 
+		legs="Wizard's Tonban", 
+		feet="Genie Huaraches"}
 	sets.midcast.cure = {
-		main="Chatoyant Staff", sub="Bugard Strap +1",
-		head="Walahra Turban", neck="Fylgja Torque +1", ear1="Roundel Earring",
-		body="Mahatma houppelande", ring1="Celestial Ring", ring2="Celestial Ring",
+		main="Chatoyant Staff", 
+		sub="Bugard Strap +1",
+		head="Walahra Turban", 
+		neck="Fylgja Torque +1", 
+		ear1="Roundel Earring",
+		body="Mahatma houppelande", 
+		ring1="Celestial Ring", 
+		ring2="Celestial Ring",
 		back="Ixion Cape"}
 	sets.midcast.enh = {
-		main="Chatoyant Staff", sub="Bugard Strap +1",
+		main="Chatoyant Staff", 
+		sub="Bugard Strap +1",
 		head="Walahra Turban",
 		body="Goliard Saio",
-		back="Ixion Cape", feet="Genie Huaraches"}
+		back="Ixion Cape", 
+		feet="Genie Huaraches"}
 	sets.midcast.SR = {
 		ring1="Sorcerer's Ring"}
 	sets.midcast.UP = {
@@ -51,16 +87,35 @@ function get_sets()
 	--Aftercast occurs after actions are sent to the server
 	sets.aftercast = {}
 	sets.aftercast.idle = {
-		main="Terra's Staff", sub = "Reaver Grip +1",
-		neck="Orochi nodowa +1", ear1="Harmonius Earring", ear2="Harmonius Earring",
-		body="Ixion Cloak", hands="Creek M mitts", ring1="Bloodbead Ring", ring2="Harmonius Ring",
-		back="Umbra Cape", waist="Steppe sash", legs="Genie Lappas", feet="Herald's Gaiters"}
+		main="Terra's Staff", 
+		sub = "Reaver Grip +1",
+		neck="Orochi nodowa +1", 
+		ear1="Harmonius Earring", 
+		ear2="Harmonius Earring",
+		body="Ixion Cloak", 
+		hands="Creek M mitts", 
+		ring1="Bloodbead Ring", 
+		ring2="Jelly Ring",
+		back="Umbra Cape", 
+		waist="Steppe sash", 
+		legs="Genie Lappas", 
+		feet="Herald's Gaiters"}
 	sets.aftercast.rest = {
-		main="Chatoyant Staff", sub="Bugard Strap+1", 
-		head="Genie tiara",
-		neck='Beak Necklace +1', ear1='Antivenom Earring', ear2="Rapture Earring",
-		body="Mahatma houppelande", hands="Genie Gages", ring1="Celestial Ring", ring2="Celestial Ring",
-		back="Invigorating Cape", waist="Qiqirn Sash +1", legs="Baron's Slops"}
+		main="Chatoyant Staff", 
+		sub="Bugard Strap+1", 
+		head="Oracle's Cap",
+		neck="Beak Necklace +1", 
+		ear1="Antivenom Earring", 
+		ear2="Rapture Earring",
+		body="Mahatma houppelande", 
+		hands="Genie Gages", 
+		ring1="Celestial Ring", 
+		ring2="Celestial Ring",
+		back="Invigorating Cape", 
+		waist="Qiqirn Sash +1", 
+		legs="Baron's Slops"}
+	sets.aftercast.SE = {
+		ear1="Sorcerer's Earring")
 
 -----------------------------------------------------------------------------------------------------------------------------
 --These functions are used to set specific gearsets before actions are sent to the server                                    
@@ -113,6 +168,9 @@ function aftercast(spell)
 	elseif player.status == "Idle" then
 		equip(sets.aftercast.idle)
 	end
+	if player.hpp < 25 and player.tp < 100 then
+		equip(sets.aftercast.SE)
+	end
 end
 
 ---------------------------------------------------------------------------------------------
@@ -124,6 +182,15 @@ function status_change(new,old)
 		equip(sets.aftercast.idle)
 	elseif new == 'Resting' then
 		equip(sets.aftercast.rest)
+	end
+end
+
+---------------------------------------------------------------------
+--This function is called everytime a status effect lands on a player
+---------------------------------------------------------------------
+function buff_change(name,gain)
+	if name == "silence" and gain =="True" then
+		send_command('input /item "Echo Drops" <me>')
 	end
 end
 end
